@@ -11,7 +11,6 @@ const video = document.getElementById("hero-video");
 const videoSource = document.getElementById("hero-video-source");
 const closeBtn = document.getElementById("close-video-btn");
 
-// Pop-up player elements
 const videoPopup = document.getElementById("video-popup");
 const popupVideo = document.getElementById("popup-video");
 const popupVideoSource = document.getElementById("popup-video-source");
@@ -146,14 +145,12 @@ function closePopup() {
 
 popupCloseBtn.onclick = closePopup;
 
-// Close popup when clicking outside the video
 videoPopup.addEventListener("click", (e) => {
   if (e.target === videoPopup) {
     closePopup();
   }
 });
 
-// Close popup with Escape key
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && videoPopup.classList.contains("active")) {
     closePopup();
@@ -167,6 +164,6 @@ function playFromCard(movieId) {
   const movie = movies.find(m => m.id == movieId);
   if (!movie) return;
 
-  // Open the pop-up player instead of the hero video
   openPopup(movie.trailer);
+
 }
