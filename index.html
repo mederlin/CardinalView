@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CardinalView | Watch Movies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<aside class="sidebar">
+    <div class="logo">
+      <img src="images/0.cardinalview-logo.png" alt="CardinalView Logo">
+    </div>
+    <nav>
+        <a class="active" href="#">🏠 Home</a>
+        <a href="#">🎞 Movies</a>
+        <a href="#">📺 TV Shows</a>
+        <a href="#">👤 Account</a>
+    </nav>
+</aside>
+
+<div class="main">
+
+    <header class="topbar">
+        <input type="text" placeholder="Search movies or TV shows...">
+        <button class="account-btn">Sign In</button>
+    </header>
+
+    <section class="hero" id="hero">
+
+      <div class="hero-video-container" id="hero-video-container">
+        <video id="hero-video" controls>
+          <source id="hero-video-source" src="" type="video/mp4">
+        </video>
+        <button id="close-video-btn">✕</button>
+      </div>
+
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1 id="hero-title"></h1>
+          <p id="hero-info"></p>
+          <button class="btn-play" onclick="openTrailer()">▶ Play Trailer</button>
+        </div>
+      </div>
+
+      <button class="hero-arrow left" onclick="prevMovie()">&#10094;</button>
+      <button class="hero-arrow right" onclick="nextMovie()">&#10095;</button>
+
+      <div class="hero-dots" id="hero-dots"></div>
+
+    </section>
+
+    <!-- Pop-up Video Player -->
+    <div class="video-popup" id="video-popup">
+      <div class="video-popup-content">
+        <button class="video-popup-close" id="popup-close-btn">✕</button>
+        <video id="popup-video" controls>
+          <source id="popup-video-source" src="" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <section class="category">
+      <h2>Romance/Drama</h2>
+      <div class="movie-row">
+        <div class="movie-card">
+          <img src="images/notebook.jpg">
+          <div class="movie-info">
+            <h3>The Notebook</h3>
+            <p>2004 • R</p>
+            <button onclick="playFromCard(1)">▶ Watch Trailer</button>
+          </div>
+        </div>
+        <div class="movie-card">
+          <img src="images/it_ends_with_us.jpg">
+          <div class="movie-info">
+            <h3>It Ends with Us</h3>
+            <p>2024 • R</p>
+            <button onclick="playFromCard(2)">▶ Watch Trailer</button>
+          </div>
+        </div>
+        <div class="movie-card">
+          <img src="images/titanic.jpg">
+          <div class="movie-info">
+            <h3>Titanic</h3>
+            <p>1997 • R</p>
+            <button onclick="playFromCard(3)">▶ Watch Trailer</button>
+          </div>
+        </div>
+        <div class="movie-card">
+          <img src="images/billie_and_emma.jpg">
+          <div class="movie-info">
+            <h3>Billie & Emma</h3>
+            <p>2018 • PG-13</p>
+            <button onclick="playFromCard(4)">▶ Watch Trailer</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category">
+      <h2>Action</h2>
+      <div class="movie-row">
+        <div class="movie-card">
+          <img src="images/mr_and_mrs_smith.png">
+          <div class="movie-info">
+            <h3>Mr. & Mrs. Smith</h3>
+            <p>2005 • PG-13</p>
+            <button onclick="playFromCard(5)">▶ Watch Trailer</button>
+          </div>
+        </div>
+        <div class="movie-card">
+          <img src="images/john_wick.jpg">
+          <div class="movie-info">
+            <h3>John Wick</h3>
+            <p>2014 • R</p>
+            <button onclick="playFromCard(6)">▶ Watch Trailer</button>
+          </div>
+        </div>
+        <div class="movie-card">
+          <img src="images/san_andreas.jpg">
+          <div class="movie-info">
+            <h3>San Andreas</h3>
+            <p>2015 • PG-13</p>
+            <button onclick="playFromCard(7)">▶ Watch Trailer</button>
+          </div>
+        </div>
+        <div class="movie-card">
+          <img src="images/kill_bill.jpg">
+          <div class="movie-info">
+            <h3>Kill Bill: Vol. 1</h3>
+            <p>2003 • R</p>
+            <button onclick="playFromCard(8)">▶ Watch Trailer</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category">
+      <h2>Musical</h2>
+      <div class="movie-row">
+        <div class="movie-card">
+          <img src="images/prom.jpg">
+          <div class="movie-info">
+            <h3>The Prom</h3>
+            <p>2020 • PG-13</p>
+            <button onclick="playFromCard(9)">▶ Watch Trailer</button>
+          </div>
+        </div>
+        <div class="movie-card">
+          <img src="images/hamilton.jpg">
+          <div class="movie-info">
+            <h3>Hamilton</h3>
+            <p>2020 • PG-13</p>
+            <button onclick="playFromCard(10)">▶ Watch Trailer</button>
+          </div>
+        </div>
+        <div class="movie-card">
+          <img src="images/girls.jpg">
+          <div class="movie-info">
+            <h3>Mean Girls</h3>
+            <p>2024 • PG-13</p>
+            <button onclick="playFromCard(11)">▶ Watch Trailer</button>
+          </div>
+        </div>
+        <div class="movie-card">
+          <img src="images/wicked.jpg">
+          <div class="movie-info">
+            <h3>Wicked</h3>
+            <p>2024 • PG</p>
+            <button onclick="playFromCard(12)">▶ Watch Trailer</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+</div>
+
+<script>
+const movies = [
+  {
+    id: 1,
+    title: "The Notebook",
+    year: 2004,
+    rating: "R",
+    duration: "2h 3m",
+    poster: "notebook.jpg",
+    hero_image: "n1.jpg",
+    trailer: "notebook.mp4",
+    genre_id: 1,
+    genre: "Romance/Drama",
+    featured: 1
+  },
+  {
+    id: 2,
+    title: "It Ends with Us",
+    year: 2024,
+    rating: "R",
+    duration: "2h 11m",
+    poster: "it_ends_with_us.jpg",
+    hero_image: "i1.jpg",
+    trailer: "it_ends_with_us.mp4",
+    genre_id: 1,
+    genre: "Romance/Drama",
+    featured: 1
+  },
+  {
+    id: 3,
+    title: "Titanic",
+    year: 1997,
+    rating: "R",
+    duration: "3h 14m",
+    poster: "titanic.jpg",
+    hero_image: "t1.jpg",
+    trailer: "titanic.mp4",
+    genre_id: 1,
+    genre: "Romance/Drama",
+    featured: 0
+  },
+  {
+    id: 4,
+    title: "Billie & Emma",
+    year: 2018,
+    rating: "PG-13",
+    duration: "1h 47m",
+    poster: "billie_and_emma.jpg",
+    hero_image: "b1.jpg",
+    trailer: "billie_and_emma.mp4",
+    genre_id: 1,
+    genre: "Romance/Drama",
+    featured: 0
+  },
+  {
+    id: 5,
+    title: "Mr. & Mrs. Smith",
+    year: 2005,
+    rating: "PG-13",
+    duration: "2h",
+    poster: "mr_and_mrs_smith.png",
+    hero_image: "m1.jpg",
+    trailer: "mr_and_mrs_smith.mp4",
+    genre_id: 2,
+    genre: "Action",
+    featured: 0
+  },
+  {
+    id: 6,
+    title: "John Wick",
+    year: 2014,
+    rating: "R",
+    duration: "1h 41m",
+    poster: "john_wick.jpg",
+    hero_image: "j1.jpg",
+    trailer: "john_wick.mp4",
+    genre_id: 2,
+    genre: "Action",
+    featured: 1
+  },
+  {
+    id: 7,
+    title: "San Andreas",
+    year: 2015,
+    rating: "PG-13",
+    duration: "1h 54m",
+    poster: "san_andreas.jpg",
+    hero_image: "s1.jpg",
+    trailer: "san_andreas.mp4",
+    genre_id: 2,
+    genre: "Action",
+    featured: 0
+  },
+  {
+    id: 8,
+    title: "Kill Bill: Vol. 1",
+    year: 2003,
+    rating: "R",
+    duration: "1h 51m",
+    poster: "kill_bill.jpg",
+    hero_image: "k1.jpg",
+    trailer: "kill_bill.mp4",
+    genre_id: 2,
+    genre: "Action",
+    featured: 0
+  },
+  {
+    id: 9,
+    title: "The Prom",
+    year: 2020,
+    rating: "PG-13",
+    duration: "2h 10m",
+    poster: "prom.jpg",
+    hero_image: "p1.jpg",
+    trailer: "prom.mp4",
+    genre_id: 3,
+    genre: "Musical",
+    featured: 0
+  },
+  {
+    id: 10,
+    title: "Hamilton",
+    year: 2020,
+    rating: "PG-13",
+    duration: "2h 40m",
+    poster: "hamilton.jpg",
+    hero_image: "h1.jpg",
+    trailer: "hamilton.mp4",
+    genre_id: 3,
+    genre: "Musical",
+    featured: 0
+  },
+  {
+    id: 11,
+    title: "Mean Girls",
+    year: 2024,
+    rating: "PG-13",
+    duration: "1h 52m",
+    poster: "girls.jpg",
+    hero_image: "g1.jpg",
+    trailer: "girls.mp4",
+    genre_id: 3,
+    genre: "Musical",
+    featured: 0
+  },
+  {
+    id: 12,
+    title: "Wicked",
+    year: 2024,
+    rating: "PG",
+    duration: "2h 40m",
+    poster: "wicked.jpg",
+    hero_image: "w1.jpg",
+    trailer: "wicked.mp4",
+    genre_id: 3,
+    genre: "Musical",
+    featured: 0
+  }
+];
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
